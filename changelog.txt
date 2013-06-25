@@ -1,0 +1,6 @@
+1.1.0
+- First Frodo release.
+0.0.9
+- Added internationalization. More than 22 sites suported.
+0.0.1
+- First Try.

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon id="plugin.video.greenpeace" name="Greenpeace videos" version="1.1.0" provider-name="jamontes">
+    <requires>
+        <import addon="xbmc.python" version="2.1.0"/>
+        <import addon="plugin.video.youtube" version="3.4.4"/>
+        <import addon="plugin.video.vimeo" version="2.5.1"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <platform>all</platform>
+        <summary lang="en">Greenpeace Videos.</summary>
+        <description lang="en">This plugin allows to watch the Greenpeace videos available online.</description>
+        <summary lang="es">Greenpeace Vídeos.</summary>
+        <description lang="es">Este plugin permite ver los vídeos online de Greenpeace.</description>
+        <language>en es fr el il nl pt fi zh he it ja ph ru de th</language>
+    </extension>
+</addon>
