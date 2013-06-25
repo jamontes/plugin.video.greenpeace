@@ -1,5 +1,5 @@
-1.1.0
-- First Frodo release.
+1.0.0
+- First Eden release.
 0.0.9
 - Added internationalization. More than 22 sites suported.
 0.0.1
