@@ -31,8 +31,13 @@ plugin_id = 'plugin.video.greenpeace'
 settings = lutil.get_plugin_settings(plugin_id)
 lutil.set_debug_mode(settings.getSetting("debug"))
 translation = settings.getLocalizedString
-site_id = int(settings.getSetting("site_id"))
 
+try:
+    site_id = int(settings.getSetting("site_id"))
+except:
+    lutil.log("greenpeace.main Warning: site_id not defined. fixed to 0")
+    settings.setSetting("site_id", "0")
+    site_id = 0
 
 sites_list = (  'international_en', 'africa_fr', 'africa_fr', 'africa_en', 'argentina_es', 'australia_en', 'belgium_nl', 'brasil_pt', 'chile_es',
                 'eastasia', 'finland_fi', 'greece_el', 'hk', 'israel_he', 'italy_it', 'japan_ja', 'mexico_es', 'seasia_ph', 'russia_ru',
