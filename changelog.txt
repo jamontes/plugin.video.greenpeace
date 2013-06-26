@@ -1,3 +1,5 @@
+1.1.1
+- Added Add-on optional tags and forum support thread.
 1.1.0
 - First Frodo release.
 0.0.9
