@@ -39,106 +39,75 @@ except:
     settings.setSetting("site_id", "0")
     site_id = 0
 
-sites_list = (  'international_en', 'africa_fr', 'africa_fr', 'africa_en', 'argentina_es', 'australia_en', 'belgium_nl', 'brasil_pt', 'chile_es',
-                'eastasia', 'finland_fi', 'greece_el', 'hk', 'israel_he', 'italy_it', 'japan_ja', 'mexico_es', 'seasia_ph', 'russia_ru',
-                'espana_es', 'switzerland_de', 'switzerland_fr', 'seasia_th')
+sites_list = (  'international_en', 'africa_fr', 'africa_fr', 'africa_en', 'argentina_es', 'australia_en', 'austria_de', 'belgium_fr',
+                'belgium_nl', 'brasil_pt', 'bulgaria_bg', 'canada_en', 'canada_fr', 'chile_es', 'china_zh', 'colombia_es', 'czech_cz',
+                'denmark_da', 'eastasia', 'australia_en', 'finland_fi', 'greece_el', 'hk', 'india_en', 'india_hi', 'seasia_id', 'israel_he',
+                'italy_it', 'japan_ja', 'korea', 'arabic', 'mexico_es', 'netherlands_nl', 'new-zealand_en', 'norway_no', 'australia_en',
+                'seasia_ph', 'portugal_pt', 'romania_ro', 'russia_ru', 'slovenia_si', 'seasia', 'espana_es', 'sweden_se', 'switzerland_de',
+                'switzerland_fr', 'taiwan_zh', 'seasia_th', 'turkey_tr', 'usa_en' )
+
+independent_sites = { 'netherlands_nl' : 'http://www.greenpeace.nl' }
 
 sites_supported = {
 
-        'international_en' : {  'url_site' : 'http://www.greenpeace.org/international/en/',
-                                'url_post' : 'http://www.greenpeace.org/international/Templates/Planet3/Handlers/GetControl.ashx',
-                                'lang'     : 'en-GB' },
-
-        'africa_fr'        : {  'url_site' : 'http://www.greenpeace.org/africa/fr/',
-                                'url_post' : 'http://www.greenpeace.org/africa/Templates/Planet3/Handlers/GetControl.ashx',
-                                'lang'     : 'fr' },
-
-        'africa_en'        : {  'url_site'  : 'http://www.greenpeace.org/africa/en/',
-                                'url_post'  : 'http://www.greenpeace.org/africa/Templates/Planet3/Handlers/GetControl.ashx',
-                                'lang'      : 'en-ZA' },
-
-        'argentina_es'     : {  'url_site'  : 'http://www.greenpeace.org/argentina/es/',
-                                'url_post'  : 'http://www.greenpeace.org/argentina/Templates/Planet3/Handlers/GetControl.ashx',
-                                'lang'      : 'es-AR' },
-
-        'australia_en'     : {  'url_site'  : 'http://www.greenpeace.org/australia/en/',
-                                'url_post'  : 'http://www.greenpeace.org/australia/Templates/Planet3/Handlers/GetControl.ashx',
-                                'lang'      : 'en-AU' },
-
-        'belgium_nl'       : {  'url_site'  : 'http://www.greenpeace.org/belgium/nl/',
-                                'url_post'  : 'http://www.greenpeace.org/belgium/Templates/Planet3/Handlers/GetControl.ashx',
-                                'lang'      : 'nl-BE' },
-
-        'brasil_pt'        : {  'url_site'  : 'http://www.greenpeace.org/brasil/pt/',
-                                'url_post'  : 'http://www.greenpeace.org/brasil/Templates/Planet3/Handlers/GetControl.ashx',
-                                'lang'      : 'pt-BR' },
-
-        'chile_es'         : {  'url_site'  : 'http://www.greenpeace.org/chile/es/',
-                                'url_post'  : 'http://www.greenpeace.org/chile/Templates/Planet3/Handlers/GetControl.ashx',
-                                'lang'      : 'es-CL' },
-
-        'eastasia'         : {  'url_site'  : 'http://www.greenpeace.org/eastasia/',
-                                'url_post'  : 'http://www.greenpeace.org/eastasia/Templates/Planet3/Handlers/GetControl.ashx',
-                                'lang'      : 'en-CN' },
-
-        'finland_fi'       : {  'url_site'  : 'http://www.greenpeace.org/finland/fi/',
-                                'url_post'  : 'http://www.greenpeace.org/finland/Templates/Planet3/Handlers/GetControl.ashx',
-                                'lang'      : 'fi-FI' },
-
-        'greece_el'        : {  'url_site'  : 'http://www.greenpeace.org/greece/el/',
-                                'url_post'  : 'http://www.greenpeace.org/greece/Templates/Planet3/Handlers/GetControl.ashx',
-                                'lang'      : 'el-GR' },
-
-        'hk'               : {  'url_site'  : 'http://www.greenpeace.org/hk/',
-                                'url_post'  : 'http://www.greenpeace.org/hk/Templates/Planet3/Handlers/GetControl.ashx',
-                                'lang'      : 'zh-HK' },
-
-        'israel_he'        : {  'url_site'  : 'http://www.greenpeace.org/israel/he/',
-                                'url_post'  : 'http://www.greenpeace.org/israel/Templates/Planet3/Handlers/GetControl.ashx',
-                                'lang'      : 'he-IL' },
-
-        'italy_it'         : {  'url_site'  : 'http://www.greenpeace.org/italy/it/',
-                                'url_post'  : 'http://www.greenpeace.org/italy/Templates/Planet3/Handlers/GetControl.ashx',
-                                'lang'      : 'it-IT' },
-
-        'japan_ja'         : {  'url_site'  : 'http://www.greenpeace.org/japan/ja/',
-                                'url_post'  : 'http://www.greenpeace.org/japan/Templates/Planet3/Handlers/GetControl.ashx',
-                                'lang'      : 'ja-JP' },
-
-        'mexico_es'        : {  'url_site'  : 'http://www.greenpeace.org/mexico/es/',
-                                'url_post'  : 'http://www.greenpeace.org/mexico/Templates/Planet3/Handlers/GetControl.ashx',
-                                'lang'      : 'es-MX' },
-
-        'seasia_ph'        : {  'url_site'  : 'http://www.greenpeace.org/seasia/ph/',
-                                'url_post'  : 'http://www.greenpeace.org/seasia/ph/Templates/Planet3/Handlers/GetControl.ashx',
-                                'lang'      : 'en-PH' },
-
-        'russia_ru'        : {  'url_site'  : 'http://www.greenpeace.org/russia/ru/',
-                                'url_post'  : 'http://www.greenpeace.org/russia/Templates/Planet3/Handlers/GetControl.ashx',
-                                'lang'      : 'ru-RU' },
-
-        'espana_es'        : {  'url_site'  : 'http://www.greenpeace.org/espana/es/',
-                                'url_post'  : 'http://www.greenpeace.org/espana/Templates/Planet3/Handlers/GetControl.ashx',
-                                'lang'      : 'es-ES' },
-
-        'switzerland_de'   : {  'url_site'  : 'http://www.greenpeace.org/switzerland/de/',
-                                'url_post'  : 'http://www.greenpeace.org/switzerland/Templates/Planet3/Handlers/GetControl.ashx',
-                                'lang'      : 'de-CH' },
-
-        'switzerland_fr'   : {  'url_site'  : 'http://www.greenpeace.org/switzerland/fr/',
-                                'url_post'  : 'http://www.greenpeace.org/switzerland/Templates/Planet3/Handlers/GetControl.ashx',
-                                'lang'      : 'fr-CH' },
-
-        'seasia_th'        : {  'url_site'  : 'http://www.greenpeace.org/seasia/th/',
-                                'url_post'  : 'http://www.greenpeace.org/seasia/th/Templates/Planet3/Handlers/GetControl.ashx',
-                                'lang'      : 'th-TH' },
+        'international_en' : ( 'international/en',              'international', 'en-GB'),
+        'africa_fr'        : ( 'africa/fr',                     'africa',        'fr'   ),
+        'africa_en'        : ( 'africa/en',                     'africa',        'en-ZA'),
+        'argentina_es'     : ( 'argentina/es',                  'argentina',     'es-AR'),
+        'australia_en'     : ( 'australia/en',                  'australia',     'en-AU'),
+        'austria_de'       : ( 'austria/de',                    'austria',       'de-AT'),
+        'belgium_fr'       : ( 'belgium/fr',                    'belgium',       'fr-BE'),
+        'belgium_nl'       : ( 'belgium/nl',                    'belgium',       'nl-BE'),
+        'brasil_pt'        : ( 'brasil/pt',                     'brasil',        'pt-BR'),
+        'bulgaria_bg'      : ( 'bulgaria/bg',                   'bulgaria',      'bg-BG'),
+        'canada_en'        : ( 'canada/en',                     'canada',        'en-CA'),
+        'canada_fr'        : ( 'canada/fr',                     'canada',        'fr-CA'),
+        'chile_es'         : ( 'chile/es',                      'chile',         'es-CL'),
+        'china_zh'         : ( 'china/zh',                      'china',         'zh-CN'),
+        'colombia_es'      : ( 'colombia/es',                   'colombia',      'es-CO'),
+        'czech_cz'         : ( 'czech/cz/Multimedia1/Videa',    'czech',         'cs-CZ'),
+        'denmark_da'       : ( 'denmark/da/Billeder-og-video',  'denmark',       'da-DK'),
+        'eastasia'         : ( 'eastasia',                      'eastasia',      'en-CN'),
+        'finland_fi'       : ( 'finland/fi',                    'finland',       'fi-FI'),
+        'greece_el'        : ( 'greece/el',                     'greece',        'el-GR'),
+        'hk'               : ( 'hk',                            'hk',            'zh-HK'),
+        'india_en'         : ( 'india/en',                      'india',         'en-IN'),
+        'india_hi'         : ( 'india/hi',                      'india',         'hi-IN'),
+        'seasia_id'        : ( 'seasia/id',                     'seasia/id',     'id-ID'),
+        'israel_he'        : ( 'israel/he',                     'israel',        'he-IL'),
+        'italy_it'         : ( 'italy/it',                      'italy',         'it-IT'),
+        'japan_ja'         : ( 'japan/ja',                      'japan',         'ja-JP'),
+        'korea'            : ( 'korea',                         'korea',         'ko-KR'),
+        'arabic'           : ( 'arabic',                        'arabic',        'ar-LB'),
+        'mexico_es'        : ( 'mexico/es',                     'mexico',        'es-MX'),
+        'netherlands_nl'   : ( 'Nieuws/Persberichten',          '',              'nl-NL'),
+        'new-zealand_en'   : ( 'new-zealand/en',                'new-zealand',   'en-NZ'),
+        'norway_no'        : ( 'norway/no',                     'norway',        'nb-NO'),
+        'seasia_ph'        : ( 'seasia/ph',                     'seasia/ph',     'en-PH'),
+        'portugal_pt'      : ( 'portugal/pt/Multimedia/videos', 'portugal',      'pt-PT'),
+        'romania_ro'       : ( 'romania/ro',                    'romania',       'ro-RO'),
+        'russia_ru'        : ( 'russia/ru',                     'russia',        'ru-RU'),
+        'slovenia_si'      : ( 'slovenia/si',                   'slovenia',      'sl-SI'),
+        'seasia'           : ( 'seasia',                        'seasia',        'en-PH'),
+        'espana_es'        : ( 'espana/es',                     'espana',        'es-ES'),
+        'sweden_se'        : ( 'sweden/se/bilder-och-video',    'sweden',        'sv-SE'),
+        'switzerland_de'   : ( 'switzerland/de',                'switzerland',   'de-CH'),
+        'switzerland_fr'   : ( 'switzerland/fr',                'switzerland',   'fr-CH'),
+        'taiwan_zh'        : ( 'taiwan/zh',                     'taiwan',        'zh-TW'),
+        'seasia_th'        : ( 'seasia/th',                     'seasia/th',     'th-TH'),
+        'turkey_tr'        : ( 'turkey/tr',                     'turkey',        'tr-TR'),
+        'usa_en'           : ( 'usa/en/multimedia/videos',      'usa',           'en-US'),
 
     }
 
 site_name = sites_list[site_id]
 lutil.log("greenpeace.main site_name: %s" % site_name)
 
-root_url = 'http://www.greenpeace.org'
+if site_name in independent_sites:
+    root_url = independent_sites[site_name]
+else:
+    root_url = 'http://www.greenpeace.org'
+
 
 # Entry point
 def run():
@@ -158,22 +127,35 @@ def run():
 def create_index(params):
     lutil.log("greenpeace.create_index "+repr(params))
 
-    buffer_html, cookies_web = lutil.carga_web_cookies(sites_supported[site_name]['url_site'])
+    url_site = '%s/%s/' % (root_url, sites_supported[site_name][0])
+    url_post = '%s/%s/Templates/Planet3/Handlers/GetControl.ashx' % (root_url, sites_supported[site_name][1])
+
+    buffer_html, cookies_web = lutil.carga_web_cookies(url_site)
     category_block_pattern = '<select>(.*?)</select>'
     category_pattern = '<option value="([^"]+)">([^<]+)</option>'
+
+    action    = 'main_list'
+    url       =  url_post
+    cookies   =  cookies_web
+    page      = '1'
+    tab       = '0'
+    category  = ''
 
     category_block = lutil.find_first(buffer_html, category_block_pattern)
     
     for category, category_title in lutil.find_multiple(category_block, category_pattern):
-        action    = 'main_list'
         category  =  category
         title     =  category_title
-        url       =  sites_supported[site_name]['url_post']
-        cookies   =  cookies_web
-        page      = '1'
-        tab       = '0'
         lutil.log('greenpeace.create_index action=["%s"] title=["%s"] url=["%s"] category=["%s"] page=["%s"] tab=["%s"]' % (action, title, url, category, page, tab))
         lutil.addDir(action=action, title=title, url=url, cookies=cookies, category=category, page=page, tab=tab)
+
+    if category == '':
+        lutil.log('greenpeace.create_index The site "%s" has not index. Call directly main_list with "All categories"' % site_name)
+        params['action']    =   action
+        params['cookies']   =   cookies
+        params['category']  =  '-1'
+        params['page']      =   page
+        return main_list(params)
 
     lutil.close_dir(pluginhandle)
 
@@ -181,15 +163,16 @@ def create_index(params):
 def main_list(params):
     lutil.log("greenpeace.main_list "+repr(params))
 
-    action    = params.get('action')
-    cookies   = params.get('cookies')
-    referer   = sites_supported[site_name]['url_site']
-    category  = params.get('category')
+    url_site = '%s/%s/' % (root_url, sites_supported[site_name][0])
+    url_post = '%s/%s/Templates/Planet3/Handlers/GetControl.ashx' % (root_url, sites_supported[site_name][1])
+    lang      =  sites_supported[site_name][2]
+    action    =  params.get('action')
+    cookies   =  params.get('cookies')
+    category  =  params.get('category')
+    page      =  params.get('page')
+    referer   =  url_site
     tab       = '0'
-    lang      = sites_supported[site_name]['lang']
-    uiculture = lang
-    page      = params.get('page')
-    url_post  = sites_supported[site_name]['url_post']
+    uiculture =  lang
 
     my_headers = {
                     'Accept'            : '*/*',

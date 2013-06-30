@@ -21,7 +21,7 @@ Initial release 1.0.0
 This XBMC plugin allows to watch the videos online from the Greenpeace web site.
 
 Through the Add-on settings you must configure the location/language preferred to watch the videos created by Greenpeace for your country.
-The Grenpeace XBMC plugin currently supports more than 20 Greenpeace locations with its corresponding languages.
+The Grenpeace XBMC plugin currently supports more than 40 Greenpeace locations with its corresponding languages. Some sites supports two different local languages.
 This plugin depends on the Youtube and Vimeo XBMC video plugins from TheCollective, to play the Greenpeace videos hosted on those sites.
 If you don't have ony of those video plugins already installed, XBMC will automatically install them for you, so the only thing you should do maybe is to activate the subtitles with your prefered language on the Youtube video plugin, the first time it is executed. 
 
