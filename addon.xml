@@ -11,9 +11,9 @@
     <extension point="xbmc.addon.metadata">
         <platform>all</platform>
         <summary lang="en">Greenpeace Videos.</summary>
-        <description lang="en">This plugin allows to watch the Greenpeace videos available online.</description>
+        <description lang="en">Greenpeace is an independent global campaigning organisation that acts since 1971 to change attitudes and behaviour, to protect and conserve the environment and to promote the peace in a non-violent manner. To maintain its independence, Greenpeace does not accept donations from governments or corporations but relies on contributions from individual supporters and foundation grants.[CR]This add-on allows to watch the Greenpeace videos available online through their websites around the world.</description>
         <summary lang="es">Greenpeace Vídeos.</summary>
-        <description lang="es">Este plugin permite ver los vídeos online de Greenpeace.</description>
+        <description lang="es">Greenpeace es una organización independiente global, que actúa desde 1971 para cambiar actitudes y comportamientos, proteger y conservar el medio ambiente, y promover la paz, de forma no violenta. Para mantener su independencia, Greenpeace no acepta donaciones de gobiernos, empresas, ni partidos políticos, sino que depende de las aportaciones de sus socios.[CR]Este add-on permite ver los vídeos online de Greenpeace, disponibles en sus sitios web alrededor del mundo.</description>
         <language>bg cs da de el en es fi fr hi in it iw ja ko nl no pt ro ru sl sv th tr zh</language>
         <license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
         <forum>http://forum.xbmc.org/showthread.php?tid=167903</forum>
