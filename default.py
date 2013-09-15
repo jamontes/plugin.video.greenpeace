@@ -28,11 +28,11 @@ pluginhandle = int(sys.argv[1])
 plugin_id = 'plugin.video.greenpeace'
 
 settings = lutil.get_plugin_settings(plugin_id)
-lutil.set_debug_mode(settings.getSetting("debug"))
+lutil.set_debug_mode(settings.getSetting('debug'))
 translation = settings.getLocalizedString
-root_dir = settings.getAddonInfo("path")
+root_dir = settings.getAddonInfo('path')
 lutil.set_fanart_file(root_dir)
-st_release = settings.getSetting("version")
+st_release = settings.getSetting('version')
 current_release = settings.getAddonInfo('version')
 
 lutil.log("greenpeace.main Addon release %s" % current_release)
@@ -43,8 +43,16 @@ if not st_release or st_release != current_release:
     settings.openSettings()
     settings.setSetting('version', current_release)
 
-best_view = settings.getSetting("best_view") == "true"
-site_id = int(settings.getSetting("site_id"))
+show_fanart = settings.getSetting('show_fanart') == 'true'
+
+try:
+    site_id = int(settings.getSetting('site_id'))
+except:
+    lutil.log("greenpeace Warning: settings not configured yet. Using default values.")
+    settings.setSetting('site_id', '0')
+    site_id = 0
+
+lutil.log("greenpeace.main site_id: %s show_fanart: %s" % (str(site_id), show_fanart))
 
 sites_list = (  'international_en', 'africa_fr', 'africa_fr', 'africa_en', 'argentina_es', 'australia_en', 'austria_de', 'belgium_fr',
                 'belgium_nl', 'brasil_pt', 'bulgaria_bg', 'canada_en', 'canada_fr', 'chile_es', 'china_zh', 'colombia_es', 'czech_cz',
@@ -215,11 +223,7 @@ def search_list(params):
     pattern_pagenum  = 'page=([0-9]+)'
     pattern_nextpage = '<a class="next" href="([^"]+)" title="([^"]+)" rel="nofollow">[^<]+</a>.+page=[^"]+" title="[^"]+" rel="nofollow">([^<]+)</a>'
 
-    # This is valind on Confluence only to force the view mode to show the video plot:
-    if best_view:
-        lutil.set_content_list(pluginhandle, 'tvshows')
-        lutil.set_view_mode('504')
-        lutil.log("greenpeace.search_list used best_view for Confluence")
+    lutil.set_content_list(pluginhandle, 'tvshows')
     lutil.set_plugin_category(pluginhandle, genre)
 
     # Here we get the prev page URL to add it at the beginning of the current video list page.
@@ -309,11 +313,7 @@ def main_list(params):
     pattern_prevpage = '<a class="prev" href="\?.*?page=([^"]+)" title="([^"]+)"'
     pattern_nextpage = '<a class="next" href="\?.*?page=([^"]+)" title="([^"]+)" rel="nofollow">[^<]+</a>.+page=([^"]+)" title="[^"]+" rel="nofollow">[^<]+</a>'
 
-    # This is valind on Confluence only to force the view mode to show the video plot:
-    if best_view:
-        lutil.set_content_list(pluginhandle, 'tvshows')
-        lutil.set_view_mode('504')
-        lutil.log("greenpeace.main_list used best_view for Confluence")
+    lutil.set_content_list(pluginhandle, 'tvshows')
     lutil.set_plugin_category(pluginhandle, genre)
 
     # Here we get the prev page URL to add it at the beginning of the current video list page.
@@ -367,7 +367,7 @@ def get_video_list(buffer_web, genre = ""):
         video_info['Premiered']   = date
         video_info['Year']    = int(year) if year else 0
         video_info['Genre']   = genre
-        lutil.addLink(action="play_video", title=title, url="%s%s" % (root_url, url), thumbnail="%s%s" % (root_url,thumbnail), video_info=video_info, show_fanart=best_view)
+        lutil.addLink(action="play_video", title=title, url="%s%s" % (root_url, url), thumbnail="%s%s" % (root_url,thumbnail), video_info=video_info, show_fanart=show_fanart)
 
 
 # This funtion search into the URL link to get the video link from the different sources.

@@ -1,10 +1,10 @@
 1.1.4
 - Added info to videos with published date, summary, year, and genre.
 - Added Search option for videos.
-- Improve navigation through video lists.
-- Supports optimized view option in add-on settings for Confluence skin.
-- Update language tag with all the languages supported from the web sites.
-- A lot of code refactoring.
+- Improved navigation through video lists.
+- Show thumbnails as fanart option from Settings.
+- Updated language tag with all the languages supported from the web sites.
+- Code refactoring.
 1.1.3
 - Support more than 40 sites. Almost all the sites with video content are supported.
 - Refactoring and code cleaning.
